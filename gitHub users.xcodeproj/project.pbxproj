@@ -15,6 +15,7 @@
 		2A403A8E2685FA1100847520 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A403A8C2685FA1100847520 /* Main.storyboard */; };
 		2A403A902685FA1100847520 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A403A8F2685FA1100847520 /* Assets.xcassets */; };
 		2A403A932685FA1100847520 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A403A912685FA1100847520 /* LaunchScreen.storyboard */; };
+		2AACE99B268B4DB400451C30 /* TableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AACE99A268B4DB400451C30 /* TableViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2A403A942685FA1100847520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A403A992685FA1100847520 /* gitHub usersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gitHub usersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A403AA42685FA1200847520 /* gitHub usersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gitHub usersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AACE99A268B4DB400451C30 /* TableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		2A3781C426860673004605E1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2AACE99A268B4DB400451C30 /* TableViewViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				2A3781C0268605E7004605E1 /* UserApi.swift in Sources */,
 				2A403A872685FA1100847520 /* AppDelegate.swift in Sources */,
 				2A3781C7268609A6004605E1 /* User.swift in Sources */,
+				2AACE99B268B4DB400451C30 /* TableViewViewModel.swift in Sources */,
 				2A403A892685FA1100847520 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
