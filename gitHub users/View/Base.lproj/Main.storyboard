@@ -10,27 +10,32 @@
         <!--Root View Controller-->
         <scene sceneID="NI5-Yy-cf1">
             <objects>
-                <tableViewController id="iJa-yD-Ubk" sceneMemberID="viewController">
+                <tableViewController id="iJa-yD-Ubk" customClass="TableViewController" customModule="gitHub_users" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0QU-yn-nOX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="71" id="47S-oi-GJx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="71" id="47S-oi-GJx">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="47S-oi-GJx" id="NJz-OT-Zns">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCx-0P-yv3">
-                                            <rect key="frame" x="20" y="11" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCx-0P-yv3">
+                                            <rect key="frame" x="20" y="11" width="374" height="49"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rCx-0P-yv3" firstAttribute="top" secondItem="NJz-OT-Zns" secondAttribute="topMargin" id="EeW-IM-Tt5"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="rCx-0P-yv3" secondAttribute="bottom" id="K88-S8-DQu"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="rCx-0P-yv3" secondAttribute="trailing" id="RcL-fK-h7P"/>
+                                        <constraint firstItem="rCx-0P-yv3" firstAttribute="leading" secondItem="NJz-OT-Zns" secondAttribute="leadingMargin" id="rI7-3D-Zlp"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -40,6 +45,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="OlI-9S-RRK"/>
+                    <connections>
+                        <outlet property="tableCell" destination="47S-oi-GJx" id="PQV-r7-KSL"/>
+                        <outlet property="userNameLabel" destination="rCx-0P-yv3" id="7cW-HI-rIs"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgr-bN-1Tr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

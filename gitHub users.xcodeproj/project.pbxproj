@@ -11,11 +11,11 @@
 		2A3781C7268609A6004605E1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3781C6268609A6004605E1 /* User.swift */; };
 		2A403A872685FA1100847520 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A403A862685FA1100847520 /* AppDelegate.swift */; };
 		2A403A892685FA1100847520 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A403A882685FA1100847520 /* SceneDelegate.swift */; };
-		2A403A8B2685FA1100847520 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A403A8A2685FA1100847520 /* ViewController.swift */; };
 		2A403A8E2685FA1100847520 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A403A8C2685FA1100847520 /* Main.storyboard */; };
 		2A403A902685FA1100847520 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A403A8F2685FA1100847520 /* Assets.xcassets */; };
 		2A403A932685FA1100847520 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A403A912685FA1100847520 /* LaunchScreen.storyboard */; };
 		2AACE99B268B4DB400451C30 /* TableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AACE99A268B4DB400451C30 /* TableViewViewModel.swift */; };
+		2AE86F2C268DEE6200E7D1DB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE86F2B268DEE6200E7D1DB /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +41,6 @@
 		2A403A832685FA1100847520 /* gitHub users.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gitHub users.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A403A862685FA1100847520 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A403A882685FA1100847520 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2A403A8A2685FA1100847520 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2A403A8D2685FA1100847520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A403A8F2685FA1100847520 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A403A922685FA1100847520 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		2A403A992685FA1100847520 /* gitHub usersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gitHub usersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A403AA42685FA1200847520 /* gitHub usersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gitHub usersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AACE99A268B4DB400451C30 /* TableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewModel.swift; sourceTree = "<group>"; };
+		2AE86F2B268DEE6200E7D1DB /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 		2A3781C326860649004605E1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2A403A8A2685FA1100847520 /* ViewController.swift */,
+				2AE86F2B268DEE6200E7D1DB /* TableViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -289,8 +289,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A403A8B2685FA1100847520 /* ViewController.swift in Sources */,
 				2A3781C0268605E7004605E1 /* UserApi.swift in Sources */,
+				2AE86F2C268DEE6200E7D1DB /* TableViewController.swift in Sources */,
 				2A403A872685FA1100847520 /* AppDelegate.swift in Sources */,
 				2A3781C7268609A6004605E1 /* User.swift in Sources */,
 				2AACE99B268B4DB400451C30 /* TableViewViewModel.swift in Sources */,
