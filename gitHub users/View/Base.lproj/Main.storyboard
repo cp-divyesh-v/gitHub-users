@@ -49,10 +49,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="OlI-9S-RRK"/>
-                    <connections>
-                        <outlet property="tableCell" destination="47S-oi-GJx" id="PQV-r7-KSL"/>
-                        <outlet property="userNameLabel" destination="rCx-0P-yv3" id="7cW-HI-rIs"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgr-bN-1Tr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
