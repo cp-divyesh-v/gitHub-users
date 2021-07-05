@@ -7,9 +7,26 @@
 
 import Foundation
 
-class UserApi {
+enum Api {
+    case userApi
+    case profileApi(id: Int)
+}
+extension Api {
     
-    func fetchUsers(onSuccess:@escaping(([User]) -> Void), onError:@escaping((Error) -> Void)) {
+    var baseUrl:String {
+        switch self {
+        case .userApi:
+            return "https://api.github.com/users"
+        case .profileApi(let id ):
+            return "https://avatars.githubusercontent.com/u/\(id)?v=4"
+        }
+    }
+}
+
+
+ class UserApi {
+    
+    static func fetchUsers(onSuccess:@escaping(([User]) -> Void), onError:@escaping((Error) -> Void)) {
         let url1 = URL(string: "https://api.github.com/users")
         guard let url = url1 else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
