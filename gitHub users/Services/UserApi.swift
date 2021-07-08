@@ -24,29 +24,31 @@ extension Api {
 }
 
 
- class UserApi {
+class UserApi {
     
-    static func fetchUsers(onSuccess:@escaping(([User]) -> Void), onError:@escaping((Error) -> Void)) {
-        let url1 = URL(string: "https://api.github.com/users")
-        guard let url = url1 else { return }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard error == nil else {
-                DispatchQueue.main.async {
-                    onError(error as! Error)
+    static func fetchUsers(completed: @escaping ([UserModel]) -> (), errorblock: @escaping ( (Error) -> () )) {
+        let url = URL(string:"https://api.github.com/users")
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if let error = error {
+                DispatchQueue.main.async{
+                    errorblock(error)
                 }
-                return
+            } else {
+                do {
+                    let users = try JSONDecoder().decode([UserModel].self, from: data!)
+                    DispatchQueue.main.async{
+                        completed(users)
+                    }
+                } catch let error {
+                    print("JSON Error")
+                    DispatchQueue.main.async{
+                        errorblock(error)
+                    }
+                }
+                
             }
-            guard let data = data else { return }
-            do {
-                let result = try JSONDecoder().decode([User].self, from: data)
-                DispatchQueue.main.async {
-                    onSuccess(result)
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    onError(error)
-                }
-            }
+            
         }.resume()
     }
+    
 }

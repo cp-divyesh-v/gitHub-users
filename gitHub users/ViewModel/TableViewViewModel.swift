@@ -23,7 +23,7 @@ class TableViewViewModel {
 
 extension TableViewViewModel {
     
-    func fetchUsers(onSuccess:@escaping(([User]) -> Void), onError:@escaping((Error) -> Void)) {
+    func fetchUsers(onSuccess:@escaping(([UserModel]) -> Void), onError:@escaping((Error) -> Void)) {
         let url1 = URL(string: "https://api.github.com/users")
         guard let url = url1 else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -35,7 +35,7 @@ extension TableViewViewModel {
             }
             guard let data = data else { return }
             do {
-                let result = try JSONDecoder().decode([User].self, from: data)
+                let result = try JSONDecoder().decode([UserModel].self, from: data)
                 DispatchQueue.main.async {
                     onSuccess(result)
                 }

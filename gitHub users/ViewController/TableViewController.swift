@@ -9,9 +9,11 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    
+    var users = [UserModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -85,5 +87,6 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }
