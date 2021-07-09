@@ -18,32 +18,19 @@ class TableViewViewModel {
         case showDetailView
     }
     
+    let store = UserDataStore()
     
 }
 
 extension TableViewViewModel {
     
-    func fetchUsers(onSuccess:@escaping(([UserModel]) -> Void), onError:@escaping((Error) -> Void)) {
-        let url1 = URL(string: "https://api.github.com/users")
-        guard let url = url1 else { return }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard error == nil else {
-                DispatchQueue.main.async {
-                    onError(error as! Error)
-                }
-                return
-            }
-            guard let data = data else { return }
-            do {
-                let result = try JSONDecoder().decode([UserModel].self, from: data)
-                DispatchQueue.main.async {
-                    onSuccess(result)
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    onError(error)
-                }
-            }
-        }.resume()
+    func getUser() {
+        UserService.fetchUsers { users in
+            self.store.users = users
+        } errorblock: { error in
+            print(error)
+        }
+
     }
+    
 }

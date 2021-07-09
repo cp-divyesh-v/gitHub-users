@@ -18,6 +18,7 @@
 		2A403A902685FA1100847520 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A403A8F2685FA1100847520 /* Assets.xcassets */; };
 		2A403A932685FA1100847520 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A403A912685FA1100847520 /* LaunchScreen.storyboard */; };
 		2A547B3B26971D4500AC524A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A547B3A26971D4500AC524A /* UserService.swift */; };
+		2A94530926987EE6007666A7 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A94530826987EE6007666A7 /* CellModel.swift */; };
 		2AACE99B268B4DB400451C30 /* TableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AACE99A268B4DB400451C30 /* TableViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		2A403A992685FA1100847520 /* gitHub usersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gitHub usersTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A403AA42685FA1200847520 /* gitHub usersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gitHub usersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A547B3A26971D4500AC524A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		2A94530826987EE6007666A7 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		2AACE99A268B4DB400451C30 /* TableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 			children = (
 				2AACE99A268B4DB400451C30 /* TableViewViewModel.swift */,
 				2A22BC79268F44B800B71F6C /* DetailViewModel.swift */,
+				2A94530826987EE6007666A7 /* CellModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				2A3781C0268605E7004605E1 /* UserApi.swift in Sources */,
 				2A22BC74268F3B5E00B71F6C /* TableViewController.swift in Sources */,
 				2A547B3B26971D4500AC524A /* UserService.swift in Sources */,
+				2A94530926987EE6007666A7 /* CellModel.swift in Sources */,
 				2A403A872685FA1100847520 /* AppDelegate.swift in Sources */,
 				2A3781C7268609A6004605E1 /* UserModel.swift in Sources */,
 				2AACE99B268B4DB400451C30 /* TableViewViewModel.swift in Sources */,

@@ -41,4 +41,9 @@ struct UserModel: Codable {
     }
 }
 
+public class UserDataStore {
+    var users = [UserModel]()
+    
+}
+
 
