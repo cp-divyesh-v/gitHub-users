@@ -2,11 +2,26 @@
 //  TableViewCell.swift
 //  gitHub users
 //
-//  Created by Divyesh Vekariya on 01/07/21.
+//  Created by Divyesh Vekariya on 12/07/21.
 //
 
-import Foundation
+import UIKit
 
-class TableViewCell {
+class TableViewCell: UITableViewCell {
+
+    @IBOutlet weak var nameLabel: UILabel!
+     
+    var cellModel:CellModel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
     
 }
