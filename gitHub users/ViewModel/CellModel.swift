@@ -6,7 +6,13 @@
 //
 
 import Foundation
-
+import RxSwift
 
 class CellModel {
+    
+    let name: BehaviorSubject<String>
+    
+    init(name: String) {
+        self.name = .init(value: name)
+    }
 }

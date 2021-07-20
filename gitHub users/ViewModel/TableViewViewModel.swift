@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import RxRelay
 
 class TableViewViewModel {
     
@@ -20,6 +22,13 @@ class TableViewViewModel {
     
     let store = UserDataStore()
     
+    let cells: BehaviorRelay<[CellModel]>
+    
+    init() {
+        cells = .init(value: [])
+        cells.accept(prepareCell())
+    }
+    
 }
 
 extension TableViewViewModel {
@@ -31,6 +40,11 @@ extension TableViewViewModel {
             print(error)
         }
 
+    }
+    
+    func prepareCell() -> [CellModel]{
+        let cells = store.users
+        return cells.map({CellModel(name: $0.login)})
     }
     
 }
