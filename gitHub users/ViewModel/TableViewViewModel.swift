@@ -26,7 +26,7 @@ class TableViewViewModel {
     
     init() {
         cells = .init(value: [])
-        cells.accept(prepareCell())
+        getUser()
     }
     
 }
@@ -36,10 +36,10 @@ extension TableViewViewModel {
     func getUser() {
         UserService.fetchUsers { users in
             self.store.users = users
+            self.cells.accept(self.prepareCell())
         } errorblock: { error in
             print(error)
         }
-
     }
     
     func prepareCell() -> [CellModel]{

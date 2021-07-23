@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,86 +25,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgr-bN-1Tr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1165.217391304348" y="100.44642857142857"/>
-        </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="ijT-MF-bg4">
-            <objects>
-                <viewController id="M6Z-Os-BqZ" customClass="DetailViewController" customModule="gitHub_users" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pF9-qs-EAY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="khy-sS-5rh">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4hI-Ae-Vrd">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UKb-BF-4UR">
-                                        <rect key="frame" x="0.0" y="409" width="414" height="409"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uqD-MK-KsB">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpq-D6-ris">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="98.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Id Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJD-dj-klp">
-                                                        <rect key="frame" x="0.0" y="103.5" width="414" height="98.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zea-qV-fJc">
-                                                        <rect key="frame" x="0.0" y="207" width="414" height="98.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ao1-Gq-G4S">
-                                                        <rect key="frame" x="0.0" y="310.5" width="414" height="98.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstItem="uqD-MK-KsB" firstAttribute="height" secondItem="UKb-BF-4UR" secondAttribute="height" id="64w-Ug-nP5"/>
-                                            <constraint firstItem="uqD-MK-KsB" firstAttribute="centerX" secondItem="UKb-BF-4UR" secondAttribute="centerX" id="AA8-RI-pKc"/>
-                                            <constraint firstItem="uqD-MK-KsB" firstAttribute="width" secondItem="UKb-BF-4UR" secondAttribute="width" id="Eaq-8T-gy3"/>
-                                            <constraint firstItem="uqD-MK-KsB" firstAttribute="centerY" secondItem="UKb-BF-4UR" secondAttribute="centerY" id="IJ6-42-04k"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="cof-HW-btF"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="khy-sS-5rh" firstAttribute="top" secondItem="cof-HW-btF" secondAttribute="top" id="Axs-40-IWA"/>
-                            <constraint firstItem="cof-HW-btF" firstAttribute="trailing" secondItem="khy-sS-5rh" secondAttribute="trailing" id="BAr-hT-9f0"/>
-                            <constraint firstItem="khy-sS-5rh" firstAttribute="leading" secondItem="cof-HW-btF" secondAttribute="leading" id="fvU-6J-Lms"/>
-                            <constraint firstItem="cof-HW-btF" firstAttribute="bottom" secondItem="khy-sS-5rh" secondAttribute="bottom" id="tDt-sj-aZd"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="jjy-up-NAf"/>
-                    <connections>
-                        <outlet property="FollowingLabel" destination="Ao1-Gq-G4S" id="v0q-CG-B5b"/>
-                        <outlet property="followersLabel" destination="zea-qV-fJc" id="Wjw-mE-lJb"/>
-                        <outlet property="idLabel" destination="EJD-dj-klp" id="1NK-wz-pCs"/>
-                        <outlet property="loginLabel" destination="wpq-D6-ris" id="Ldr-Xq-u1C"/>
-                        <outlet property="profileImageView" destination="4hI-Ae-Vrd" id="di4-NW-BKX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c31-PI-851" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1938" y="100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JZ8-4W-SgO">

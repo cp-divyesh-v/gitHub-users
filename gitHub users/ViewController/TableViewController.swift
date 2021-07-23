@@ -16,14 +16,14 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchUser()
         setUpRxObserver()
+        iniyView()
     }
     
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,15 +32,12 @@ class TableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.ID, for: indexPath) as! TableViewCell
-        cell.cellModel = items[indexPath.item]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath) as! TableViewCell
+        cell.cellModel = items[indexPath.row]
         return cell
     }
     func iniyView() {
-        tableView.register(TableViewCell.NIB, forCellReuseIdentifier: TableViewCell.ID)
-    }
-    func fetchUser() {
-        viewModel.getUser()
+        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "nameCell")
     }
     
     func setUpRxObserver() {

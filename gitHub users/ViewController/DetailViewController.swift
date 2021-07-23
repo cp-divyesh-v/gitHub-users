@@ -1,23 +1,47 @@
 //
-//  DetailViewController.swift
+//  UIViewViewController.swift
 //  gitHub users
 //
-//  Created by Divyesh Vekariya on 02/07/21.
+//  Created by Divyesh Vekariya on 23/07/21.
 //
 
 import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var idLabel: UILabel!
-    @IBOutlet weak var followersLabel: UILabel!
-    @IBOutlet weak var FollowingLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        // Do any additional setup after loading the view.
     }
+
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
+extension DetailViewController: UITableViewDelegate {
+    
+}
+
+extension DetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
 }
