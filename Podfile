@@ -7,6 +7,5 @@ target 'gitHub users' do
 
     pod 'RxSwift', '6.2.0'
     pod 'RxCocoa', '6.2.0'
-    Pod 'RxBinding
-
+    pod 'RxBinding'
 end

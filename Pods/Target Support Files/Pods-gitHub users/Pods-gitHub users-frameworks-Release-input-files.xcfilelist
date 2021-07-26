@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-gitHub users/Pods-gitHub users-frameworks.sh
+${BUILT_PRODUCTS_DIR}/RxBinding/RxBinding.framework
 ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
 ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
 ${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
