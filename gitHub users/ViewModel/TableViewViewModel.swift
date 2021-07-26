@@ -12,12 +12,18 @@ import RxRelay
 
 class TableViewViewModel {
     
-    enum action {
+    lazy var disposeBag = DisposeBag()
+    
+    let didActionSubject: PublishSubject<Action> = .init()
+    
+    enum Action {
         case onTap(IndexPath)
     }
     
-    enum viewToPresent {
-        case showDetailView
+    var shouldPresentSubject: PublishSubject<ViewToPresent> = .init()
+    
+    enum ViewToPresent {
+        case showDetailView(UserModel)
     }
     
     let store = UserDataStore()
@@ -27,6 +33,7 @@ class TableViewViewModel {
     init() {
         cells = .init(value: [])
         getUser()
+        setUpRxObserver()
     }
     
 }
@@ -47,4 +54,19 @@ extension TableViewViewModel {
         return cells.map({CellModel(name: $0.login)})
     }
     
+    func setUpRxObserver() {
+        setUpActonObserver()
+    }
+    
+    func setUpActonObserver() {
+        didActionSubject.asObserver()
+            .subscribe(onNext: { [weak self] action in
+                guard let self = self else { return }
+                switch action {
+                case .onTap(let indexPath):
+                    let user = self.store.users[indexPath.row]
+                    self.shouldPresentSubject.onNext(.showDetailView(user))
+                }
+            }) .disposed(by: disposeBag)
+    }
 }

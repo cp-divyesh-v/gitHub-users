@@ -16,6 +16,7 @@ class TableViewCell: UITableViewCell {
     lazy var disposeBag: DisposeBag = {
         return DisposeBag()
     }()
+    
     @IBOutlet weak var nameLabel: UILabel!
      
     var cellModel: CellModel? {
