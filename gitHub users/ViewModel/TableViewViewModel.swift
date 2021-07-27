@@ -23,7 +23,7 @@ class TableViewViewModel {
     var shouldPresentSubject: PublishSubject<ViewToPresent> = .init()
     
     enum ViewToPresent {
-        case showDetailView(UserModel)
+        case showDetailView(DetailViewModel)
     }
     
     let store = UserDataStore()
@@ -54,18 +54,23 @@ extension TableViewViewModel {
         return cells.map({CellModel(name: $0.login)})
     }
     
+    func handleShowDetailView(user: UserModel) {
+        let viewModel = DetailViewModel(user: user)
+        self.shouldPresentSubject.onNext(.showDetailView(viewModel))
+    }
+    
     func setUpRxObserver() {
         setUpActonObserver()
     }
     
     func setUpActonObserver() {
-        didActionSubject.asObserver()
+        didActionSubject.asObservable()
             .subscribe(onNext: { [weak self] action in
                 guard let self = self else { return }
                 switch action {
                 case .onTap(let indexPath):
                     let user = self.store.users[indexPath.row]
-                    self.shouldPresentSubject.onNext(.showDetailView(user))
+                    self.handleShowDetailView(user: user)
                 }
             }) .disposed(by: disposeBag)
     }

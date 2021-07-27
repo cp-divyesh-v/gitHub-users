@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+
+class DetailViewModel {
+    let user: UserModel
+    
+    init(user:UserModel) {
+        self.user = user
+    }
+}

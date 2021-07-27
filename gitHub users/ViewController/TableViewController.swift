@@ -17,7 +17,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpRxObserver()
-        iniyView()
+        initView()
     }
     
     // MARK: - Table view data source
@@ -41,12 +41,13 @@ class TableViewController: UITableViewController {
         viewModel.didActionSubject.onNext(.onTap(indexPath))
     }
     
-    func iniyView() {
+    func initView() {
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "nameCell")
     }
-    
+        
     func setUpRxObserver() {
         setUpContantChangeObserver()
+        setUpViewToPresetObserver()
     }
     
     func setUpContantChangeObserver() {
@@ -57,12 +58,14 @@ class TableViewController: UITableViewController {
     }
     
     func setUpViewToPresetObserver() {
-        viewModel.shouldPresentSubject
+        viewModel.shouldPresentSubject.asObservable()
         .subscribe(onNext: { [weak self] viewToPresent in
             guard let self = self else { return }
             switch viewToPresent{
-            case .showDetailView(let user):
-                <#code#>
+            case .showDetailView(let viewModel):
+                let vc = DetailViewController(nibName: "DetailViewController", bundle: .none)
+                vc.viewModel = viewModel
+                self.show(vc, sender: nil)
             }
             
         }) .disposed(by: disposeBag)

@@ -11,10 +11,11 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var viewModel: DetailViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        initView()
     }
 
 
@@ -27,6 +28,10 @@ class DetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func initView() {
+        tableView.register(UINib(nibName: "ProfileCell", bundle: nil), forCellReuseIdentifier: "imageCell")
+        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "nameCell")
+    }
 
 }
 
@@ -36,11 +41,17 @@ extension DetailViewController: UITableViewDelegate {
 
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ProfileCell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath) as! TableViewCell
+            return cell
+        }
     }
     
     
