@@ -17,6 +17,8 @@
 		2A384DD626AAF14E005C7649 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A384DD426AAF14E005C7649 /* DetailViewController.xib */; };
 		2A384DD926AAF2FF005C7649 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A384DD726AAF2FF005C7649 /* ProfileCell.swift */; };
 		2A384DDA26AAF2FF005C7649 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A384DD826AAF2FF005C7649 /* ProfileCell.xib */; };
+		2A3FD65226B17DF4000B91F6 /* UIImageView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3FD65126B17DF4000B91F6 /* UIImageView+Extention.swift */; };
+		2A3FD65426B188EF000B91F6 /* ProfileCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3FD65326B188EF000B91F6 /* ProfileCellModel.swift */; };
 		2A403A872685FA1100847520 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A403A862685FA1100847520 /* AppDelegate.swift */; };
 		2A403A892685FA1100847520 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A403A882685FA1100847520 /* SceneDelegate.swift */; };
 		2A403A8E2685FA1100847520 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A403A8C2685FA1100847520 /* Main.storyboard */; };
@@ -56,6 +58,8 @@
 		2A384DD426AAF14E005C7649 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		2A384DD726AAF2FF005C7649 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		2A384DD826AAF2FF005C7649 /* ProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
+		2A3FD65126B17DF4000B91F6 /* UIImageView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extention.swift"; sourceTree = "<group>"; };
+		2A3FD65326B188EF000B91F6 /* ProfileCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCellModel.swift; sourceTree = "<group>"; };
 		2A403A832685FA1100847520 /* gitHub users.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gitHub users.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A403A862685FA1100847520 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A403A882685FA1100847520 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				2AACE99A268B4DB400451C30 /* TableViewViewModel.swift */,
 				2A22BC79268F44B800B71F6C /* DetailViewModel.swift */,
 				2A94530826987EE6007666A7 /* CellModel.swift */,
+				2A3FD65326B188EF000B91F6 /* ProfileCellModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -155,6 +160,14 @@
 				2A403A8F2685FA1100847520 /* Assets.xcassets */,
 			);
 			path = Resorces;
+			sourceTree = "<group>";
+		};
+		2A3FD65026B17DDC000B91F6 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				2A3FD65126B17DF4000B91F6 /* UIImageView+Extention.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 		2A403A7A2685FA1100847520 = {
@@ -180,6 +193,7 @@
 		2A403A852685FA1100847520 /* gitHub users */ = {
 			isa = PBXGroup;
 			children = (
+				2A3FD65026B17DDC000B91F6 /* Extentions */,
 				2A403A862685FA1100847520 /* AppDelegate.swift */,
 				2A403A882685FA1100847520 /* SceneDelegate.swift */,
 				2A3781BE268605AE004605E1 /* Services */,
@@ -388,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A3781C0268605E7004605E1 /* UserApi.swift in Sources */,
+				2A3FD65426B188EF000B91F6 /* ProfileCellModel.swift in Sources */,
 				2A384DD526AAF14E005C7649 /* DetailViewController.swift in Sources */,
 				2A22BC74268F3B5E00B71F6C /* TableViewController.swift in Sources */,
 				2A547B3B26971D4500AC524A /* UserService.swift in Sources */,
@@ -397,6 +412,7 @@
 				2A011144269C6EEC00FB0266 /* TableViewCell.swift in Sources */,
 				2AACE99B268B4DB400451C30 /* TableViewViewModel.swift in Sources */,
 				2A384DD926AAF2FF005C7649 /* ProfileCell.swift in Sources */,
+				2A3FD65226B17DF4000B91F6 /* UIImageView+Extention.swift in Sources */,
 				2A403A892685FA1100847520 /* SceneDelegate.swift in Sources */,
 				2A22BC7A268F44B800B71F6C /* DetailViewModel.swift in Sources */,
 			);

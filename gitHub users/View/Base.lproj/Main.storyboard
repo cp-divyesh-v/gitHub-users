@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Profiles-->
         <scene sceneID="NI5-Yy-cf1">
             <objects>
                 <tableViewController id="iJa-yD-Ubk" customClass="TableViewController" customModule="gitHub_users" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                             <outlet property="delegate" destination="iJa-yD-Ubk" id="TYW-QE-QpB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="OlI-9S-RRK"/>
+                    <navigationItem key="navigationItem" title="Profiles" id="OlI-9S-RRK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgr-bN-1Tr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

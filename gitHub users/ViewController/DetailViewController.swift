@@ -31,6 +31,7 @@ class DetailViewController: UIViewController {
     func initView() {
         tableView.register(UINib(nibName: "ProfileCell", bundle: nil), forCellReuseIdentifier: "imageCell")
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "nameCell")
+        viewModel.fetchImage(from: viewModel.user.avatarURL)
     }
 
 }
