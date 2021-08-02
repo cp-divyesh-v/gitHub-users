@@ -41,7 +41,7 @@ class TableViewViewModel {
 extension TableViewViewModel {
     
     func getUser() {
-        UserService.fetchUsers { users in
+        ApiService.fetchUsers { users in
             self.store.users = users
             self.cells.accept(self.prepareCell())
         } errorblock: { error in

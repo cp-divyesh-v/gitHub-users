@@ -17,6 +17,11 @@ class DetailViewModel {
     
     let user: UserModel
     let currentUserAvatar: BehaviorRelay<UIImage?>
+    let profileCell: BehaviorRelay<ProfileCell>
+    
+    let repoStore = RepoStore()
+    let avatarStore = AvatarStore()
+    
     
     init(user:UserModel) {
         self.user = user
@@ -24,27 +29,20 @@ class DetailViewModel {
     }
     
     func fetchImage(from url: String) {
-        let url = URL(string: url)
-        guard let url = url else { return }
-        downloadImage(from: url)
+        self.avatarStore.avatar[user.avatarURL] = AvatarApi.downloadImage(user.avatarURL)
     }
     
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    func getRepo() {
+        repoStore.repos = ApiService.fetchRepo(url: user.reposURL)
     }
     
-    func downloadImage(from url: URL) {
-        getData(from: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            guard let img = UIImage(data: data) else { return }
-            self.currentUserAvatar.accept(img)
-            
-        }
+    func prepareCellForRepo() -> [CellModel] {
+        let cell = repoStore.repos
+        return cell.map({CellModel(name: $0.name)})
     }
     
-//    func prepareCell() -> [ProfileCell] {
-//        let cell =
-//        return cell.map({ProfileCellModel(avatar: T##UIImag)})
-//    }
+    func prepareCellForAvatar() -> ProfileCell {
+        let avatarCell = downloadImage(from: user.avatarURL)
+        return avatarCell.map({ProfileCellModel(avatar: $0.)})
+    }
 }

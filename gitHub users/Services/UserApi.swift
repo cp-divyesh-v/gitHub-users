@@ -26,7 +26,7 @@ extension Api {
 
 class UserApi {
     
-    static func fetchUsers(completed: @escaping ([UserModel]) -> (), errorblock: @escaping ( (Error) -> () )) {
+    public static func fetchUsers(completed: @escaping ([UserModel]) -> (), errorblock: @escaping ( (Error) -> () )) {
         let url = URL(string:"https://api.github.com/users")
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
             if let error = error {

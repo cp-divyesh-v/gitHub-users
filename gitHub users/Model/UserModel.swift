@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct UserModel: Codable {
     let login: String
     let id: Int
