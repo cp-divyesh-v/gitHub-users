@@ -7,16 +7,40 @@
 
 import Foundation
 
-class ApiService {
-    static func fetchUserFomGit() -> [UserModel] {
-        var users = [UserModel]()
-            UserApi.fetchUsers(completed: { user in
-            users.append(contentsOf: user)
-        }, errorblock: { error in
-            print(error)
-        })
-        return users
+public class ApiService {
+    static func fetchUsers(completed: @escaping ([UserModel]) -> (), errorblock: @escaping ( (Error) -> () )) {
+        let url = URL(string:"https://api.github.com/users")
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if let error = error {
+                DispatchQueue.main.async{
+                    errorblock(error)
+                }
+            } else {
+                do {
+                    let users = try JSONDecoder().decode([UserModel].self, from: data!)
+                    DispatchQueue.main.async{
+                        completed(users)
+                    }
+                } catch let error {
+                    print("JSON Error")
+                    DispatchQueue.main.async{
+                        errorblock(error)
+                    }
+                }
+                
+            }
+            
+        }.resume()
     }
+//    static func fetchUserFomGit() -> [UserModel] {
+//        var users = [UserModel]()
+//            UserApi.fetchUsers(completed: { user in
+//            users.append(contentsOf: user)
+//        }, errorblock: { error in
+//            print(error)
+//        })
+//        return users
+//    }
 
 }
 extension ApiService {

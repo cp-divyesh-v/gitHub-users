@@ -6,15 +6,23 @@
 //
 
 import UIKit
+import RxSwift
 
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    lazy var disposeBag: DisposeBag = DisposeBag()
+    
     var viewModel: DetailViewModel!
+    var avatarCell = [ProfileCellModel]()
+    var repoItems = [CellModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        setUpRxObserver()
         initView()
     }
 
@@ -37,23 +45,44 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController: UITableViewDelegate {
+
     
 }
 
 extension DetailViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        repoItems.count + avatarCell.count
     }
+    
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ProfileCell
+            cell.cellModel = avatarCell[indexPath.row]
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath) as! TableViewCell
+            cell.cellModel = repoItems[indexPath.row]
             return cell
         }
     }
     
+    func setUpRxObserver() {
+        setUpContantChangeObserver()
+    }
+    
+    func setUpContantChangeObserver() {
+        viewModel.profileCell.asObservable().subscribe(onNext: { cell in
+            self.avatarCell = cell
+            self.tableView.reloadData()
+        }) .disposed(by: disposeBag)
+        
+        viewModel.repos.asObservable().subscribe(onNext: { repos in
+            self.repoItems = repos
+            self.tableView.reloadData()
+        }) .disposed(by: disposeBag)
+    }
     
 }

@@ -16,8 +16,8 @@ class DetailViewModel {
     lazy var disposeBag: DisposeBag = DisposeBag()
     
     let user: UserModel
-    let currentUserAvatar: BehaviorRelay<UIImage?>
-    let profileCell: BehaviorRelay<ProfileCell>
+    let profileCell: BehaviorRelay<[ProfileCellModel]>
+    let repos: BehaviorRelay<[CellModel]>
     
     let repoStore = RepoStore()
     let avatarStore = AvatarStore()
@@ -25,15 +25,23 @@ class DetailViewModel {
     
     init(user:UserModel) {
         self.user = user
-        currentUserAvatar = .init(value: nil)
+        self.profileCell = .init(value: [])
+        self.repos = .init(value: [])
     }
     
     func fetchImage(from url: String) {
-        self.avatarStore.avatar[user.avatarURL] = AvatarApi.downloadImage(user.avatarURL)
+        AvatarApi.downloadImage(from: user.avatarURL) { img in
+            self.profileCell.accept(self.prepareCellForAvatar())
+            self.avatarStore.avatar[self.user.avatarURL] = img
+        } onError: { error in
+            print("Downloding image fail \(error)")
+        }
+
     }
     
     func getRepo() {
         repoStore.repos = ApiService.fetchRepo(url: user.reposURL)
+        repos.accept(prepareCellForRepo())
     }
     
     func prepareCellForRepo() -> [CellModel] {
@@ -41,8 +49,11 @@ class DetailViewModel {
         return cell.map({CellModel(name: $0.name)})
     }
     
-    func prepareCellForAvatar() -> ProfileCell {
-        let avatarCell = downloadImage(from: user.avatarURL)
-        return avatarCell.map({ProfileCellModel(avatar: $0.)})
+    func prepareCellForAvatar() -> [ProfileCellModel] {
+        let avatarImg = avatarStore.avatar[user.avatarURL]
+        if let img = avatarImg {
+            return [ProfileCellModel(avatar: img)]
+        }
+        return []
     }
 }
