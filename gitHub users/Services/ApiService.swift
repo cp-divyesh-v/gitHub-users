@@ -44,14 +44,12 @@ public class ApiService {
 
 }
 extension ApiService {
-    static func fetchRepo(url: String) -> [RepoModel] {
-        var repository = [RepoModel]()
+    static func fetchRepo(url: String, onSucces: @escaping ([RepoModel]) -> ()){
         RepoApi.fetchRepo(from: url) { repos in
-            repository = repos
+            onSucces(repos)
         } onError: { error in
             print("problem occured in fatching repos from remote error \(error)")
         }
-        return repository
     }
 }
 

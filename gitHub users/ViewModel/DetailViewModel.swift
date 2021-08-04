@@ -31,8 +31,8 @@ class DetailViewModel {
     
     func fetchImage(from url: String) {
         AvatarApi.downloadImage(from: user.avatarURL) { img in
-            self.profileCell.accept(self.prepareCellForAvatar())
             self.avatarStore.avatar[self.user.avatarURL] = img
+            self.profileCell.accept(self.prepareCellForAvatar())
         } onError: { error in
             print("Downloding image fail \(error)")
         }
@@ -40,7 +40,9 @@ class DetailViewModel {
     }
     
     func getRepo() {
-        repoStore.repos = ApiService.fetchRepo(url: user.reposURL)
+        ApiService.fetchRepo(url: user.reposURL) { repos in
+            self.repoStore.repos = repos
+        }
         repos.accept(prepareCellForRepo())
     }
     

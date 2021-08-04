@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 class DetailViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     lazy var disposeBag: DisposeBag = DisposeBag()
@@ -25,47 +25,47 @@ class DetailViewController: UIViewController {
         setUpRxObserver()
         initView()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     func initView() {
         tableView.register(UINib(nibName: "ProfileCell", bundle: nil), forCellReuseIdentifier: "imageCell")
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "nameCell")
         viewModel.fetchImage(from: viewModel.user.avatarURL)
+        viewModel.getRepo()
     }
-
 }
 
 extension DetailViewController: UITableViewDelegate {
-
-    
 }
 
 extension DetailViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        repoItems.count + avatarCell.count
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
     }
     
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return avatarCell.count
+        case 1:
+            return repoItems.count
+        default:
+            return 1
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        switch indexPath.section {
+        case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ProfileCell
             cell.cellModel = avatarCell[indexPath.row]
             return cell
-        } else {
+        case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath) as! TableViewCell
             cell.cellModel = repoItems[indexPath.row]
             return cell
+        default:
+            return UITableViewCell()
         }
     }
     
@@ -74,7 +74,7 @@ extension DetailViewController: UITableViewDataSource {
     }
     
     func setUpContantChangeObserver() {
-        viewModel.profileCell.asObservable().subscribe(onNext: { cell in
+        viewModel.profileCell.observe(on: MainScheduler.instance).subscribe(onNext: { cell in
             self.avatarCell = cell
             self.tableView.reloadData()
         }) .disposed(by: disposeBag)
@@ -84,5 +84,4 @@ extension DetailViewController: UITableViewDataSource {
             self.tableView.reloadData()
         }) .disposed(by: disposeBag)
     }
-    
 }
