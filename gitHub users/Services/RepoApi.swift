@@ -10,13 +10,14 @@ import Foundation
 class RepoApi {
     
     public static func fetchRepo(from url: String, onSucces:  @escaping ([RepoModel]) -> (), onError:  @escaping(Error) -> ()) {
+        print("url \(url)")
         guard let url = URL(string: url) else { return }
         getData(from: url) { data, response, error in
-            return
             guard let data = data, error == nil else { return }
             do {
                 let repo = try JSONDecoder().decode([RepoModel].self, from: data)
                 onSucces(repo)
+                print("\(repo)")
             } catch let error {
                 onError(error)
                 print("JSON Error")

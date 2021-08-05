@@ -40,8 +40,11 @@ class DetailViewModel {
     }
     
     func getRepo() {
-        ApiService.fetchRepo(url: user.reposURL) { repos in
+        RepoApi.fetchRepo(from: user.reposURL) { repos in
             self.repoStore.repos = repos
+            self.repos.accept(self.prepareCellForRepo())
+        } onError: { error in
+            print("error occure in faching repositroty \(error)")
         }
         repos.accept(prepareCellForRepo())
     }

@@ -79,7 +79,7 @@ extension DetailViewController: UITableViewDataSource {
             self.tableView.reloadData()
         }) .disposed(by: disposeBag)
         
-        viewModel.repos.asObservable().subscribe(onNext: { repos in
+        viewModel.repos.observe(on: MainScheduler.instance).subscribe(onNext: { repos in
             self.repoItems = repos
             self.tableView.reloadData()
         }) .disposed(by: disposeBag)

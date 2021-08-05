@@ -39,65 +39,129 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FDFC1174-EBB9-4149-85B0-BE2C7834330E"
+            uuid = "B70AF662-3205-4559-8196-2D9668D26DA4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "gitHub users/ViewController/TableViewController.swift"
+            filePath = "gitHub users/Services/RepoApi.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "setUpViewToPresetObserver()"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "fetchRepo(from:onSucces:onError:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "43DFEA79-B562-42E0-9B2D-47B264B49B76"
+            uuid = "4A61C624-EDDA-474C-8649-FDED338CB3EF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "gitHub users/ViewModel/TableViewViewModel.swift"
+            filePath = "gitHub users/Services/UserApi.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "setUpActonObserver()"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "fetchUsers(completed:errorblock:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "20EF6865-3BF9-4356-A251-85A17ECEF028"
+            uuid = "D88004FE-3AF6-4F7D-A622-DDA1FB3CEB31"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "gitHub users/ViewModel/TableViewViewModel.swift"
+            filePath = "gitHub users/Services/UserApi.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "handleShowDetailView(user:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "fetchUsers(completed:errorblock:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D88004FE-3AF6-4F7D-A622-DDA1FB3CEB31 - 7b9352c2cfd725c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static gitHub_users.UserApi.fetchUsers(completed: (Swift.Array&lt;gitHub_users.UserModel&gt;) -&gt; (), errorblock: (Swift.Error) -&gt; ()) -&gt; ()"
+                  moduleName = "gitHub users"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/divyeshvekariya/Desktop/Q3/gitHub-users/gitHub%20users/Services/UserApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "259">
+               </Location>
+               <Location
+                  uuid = "D88004FE-3AF6-4F7D-A622-DDA1FB3CEB31 - b152a02c348bb6b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static gitHub_users.UserApi.fetchUsers(completed: (Swift.Array&lt;gitHub_users.UserModel&gt;) -&gt; (), errorblock: (Swift.Error) -&gt; ()) -&gt; ()"
+                  moduleName = "gitHub users"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/divyeshvekariya/Desktop/Q3/gitHub-users/gitHub%20users/Services/UserApi.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "358">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CD4CE219-DEA1-4ABD-B017-8E45EE2C76A2"
+            uuid = "E96FDBEB-8AAA-45B7-BD98-C4717A76DFC3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "gitHub users/ViewController/TableViewController.swift"
+            filePath = "gitHub users/ViewModel/DetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "setUpViewToPresetObserver()"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "prepareCellForRepo()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E96FDBEB-8AAA-45B7-BD98-C4717A76DFC3 - c8cfb89ec9e5bf4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "gitHub_users.DetailViewModel.prepareCellForRepo() -&gt; Swift.Array&lt;gitHub_users.CellModel&gt;"
+                  moduleName = "gitHub users"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/divyeshvekariya/Desktop/Q3/gitHub-users/gitHub%20users/ViewModel/DetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "114">
+               </Location>
+               <Location
+                  uuid = "E96FDBEB-8AAA-45B7-BD98-C4717A76DFC3 - 8b73ca63236b3154"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (gitHub_users.RepoModel) -&gt; gitHub_users.CellModel in gitHub_users.DetailViewModel.prepareCellForRepo() -&gt; Swift.Array&lt;gitHub_users.CellModel&gt;"
+                  moduleName = "gitHub users"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/divyeshvekariya/Desktop/Q3/gitHub-users/gitHub%20users/ViewModel/DetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "33">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

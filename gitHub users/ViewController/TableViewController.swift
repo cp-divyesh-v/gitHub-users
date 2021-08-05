@@ -44,7 +44,7 @@ class TableViewController: UITableViewController {
     func initView() {
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "nameCell")
     }
-        
+    
     func setUpRxObserver() {
         setUpContantChangeObserver()
         setUpViewToPresetObserver()
@@ -59,16 +59,16 @@ class TableViewController: UITableViewController {
     
     func setUpViewToPresetObserver() {
         viewModel.shouldPresentSubject.asObservable()
-        .subscribe(onNext: { [weak self] viewToPresent in
-            guard let self = self else { return }
-            switch viewToPresent{
-            case .showDetailView(let viewModel):
-                let vc = DetailViewController(nibName: "DetailViewController", bundle: .none)
-                vc.viewModel = viewModel
-                self.show(vc, sender: nil)
-            }
-            
-        }) .disposed(by: disposeBag)
+            .subscribe(onNext: { [weak self] viewToPresent in
+                guard let self = self else { return }
+                switch viewToPresent{
+                case .showDetailView(let viewModel):
+                    let vc = DetailViewController(nibName: "DetailViewController", bundle: .none)
+                    vc.viewModel = viewModel
+                    self.show(vc, sender: nil)
+                }
+                
+            }) .disposed(by: disposeBag)
     }
     
 }
