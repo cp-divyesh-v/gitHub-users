@@ -16,6 +16,7 @@ class TableViewCell: UITableViewCell {
     }()
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var cellBg: UIView!
     
     var cellModel: CellModel? {
         didSet {
@@ -30,6 +31,7 @@ class TableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        decorateCell()
         
     }
     
@@ -37,4 +39,7 @@ class TableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func decorateCell() {
+        cellBg.layer.cornerRadius = frame.height/4
+    }
 }

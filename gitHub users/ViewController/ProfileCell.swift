@@ -11,6 +11,7 @@ import RxSwift
 class ProfileCell: UITableViewCell {
 
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var imgHeight: NSLayoutConstraint!
     
     lazy var disposeBag: DisposeBag = {
         return DisposeBag()
@@ -29,10 +30,16 @@ class ProfileCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        decoration()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func decoration() {
+        profileImageView.layer.cornerRadius = profileImageView.frame.width/4
+        imgHeight.constant = frame.width - 25
     }
     
     

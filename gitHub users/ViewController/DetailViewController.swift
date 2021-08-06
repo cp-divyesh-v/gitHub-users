@@ -59,13 +59,27 @@ extension DetailViewController: UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ProfileCell
             cell.cellModel = avatarCell[indexPath.row]
+            cell.heightAnchor.constraint(equalToConstant: view.frame.width).isActive = true
+            cell.isUserInteractionEnabled = false
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath) as! TableViewCell
             cell.cellModel = repoItems[indexPath.row]
+            cell.isUserInteractionEnabled = false
             return cell
         default:
             return UITableViewCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return view.frame.width
+        case 1:
+            return 70
+        default:
+            return 60
         }
     }
     

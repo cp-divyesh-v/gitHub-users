@@ -16,7 +16,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zum-PK-tb8">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4u-BB-owc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <color key="backgroundColor" red="0.71595860194493011" green="0.80259501850688375" blue="0.89031470238745625" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zum-PK-tb8">
                         <rect key="frame" x="26" y="11" width="268" height="22"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -26,12 +30,17 @@
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="Zum-PK-tb8" secondAttribute="trailing" constant="10" id="0n5-ka-Ljf"/>
                     <constraint firstItem="Zum-PK-tb8" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="1Uf-ja-4LD"/>
+                    <constraint firstAttribute="trailing" secondItem="d4u-BB-owc" secondAttribute="trailing" id="Ahf-gx-3ir"/>
+                    <constraint firstItem="d4u-BB-owc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="DxB-sQ-eNp"/>
                     <constraint firstItem="Zum-PK-tb8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Jgs-3y-2XJ"/>
+                    <constraint firstItem="d4u-BB-owc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fHo-ni-aVd"/>
                     <constraint firstItem="Zum-PK-tb8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="jgW-41-EOC"/>
+                    <constraint firstAttribute="bottom" secondItem="d4u-BB-owc" secondAttribute="bottom" id="xfu-MD-aIb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cellBg" destination="d4u-BB-owc" id="rhh-6O-86N"/>
                 <outlet property="nameLabel" destination="Zum-PK-tb8" id="96m-Ee-rjd"/>
             </connections>
             <point key="canvasLocation" x="35" y="3"/>
